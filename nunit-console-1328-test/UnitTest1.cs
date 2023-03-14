@@ -1,4 +1,5 @@
 using nunit_console_1328_repro_lib;
+using System.Globalization;
 
 namespace nunit_console_1328_test
 {
@@ -8,6 +9,9 @@ namespace nunit_console_1328_test
         [SetUp]
         public void Setup()
         {
+            CultureInfo ci = new CultureInfo("en-US");
+            Thread.CurrentThread.CurrentCulture = ci;
+            Thread.CurrentThread.CurrentUICulture = ci;
         }
 
         [Test]
